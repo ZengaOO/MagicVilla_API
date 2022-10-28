@@ -110,7 +110,7 @@ namespace MagicVilla_VillaAPI.Controllers
             villa.Sqft = villaDTO.Sqft;
             villa.Occupancy = villaDTO.Occupancy;
 
-            return = NoContent();   
+            return NoContent();
         }
     }
 }
