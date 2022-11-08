@@ -10,3 +10,4 @@ namespace MagicVilla_VillaAPI.Models.Dto
         public string SpecialDetails { get; set; }
 
     }
+}
