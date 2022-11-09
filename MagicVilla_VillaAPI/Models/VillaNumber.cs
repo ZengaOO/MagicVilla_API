@@ -10,6 +10,7 @@ namespace MagicVilla_VillaAPI.Models
         public int VillaNo { get; set; }
 
         [ForeignKey("Villa")]
+
         public int VillaID { get; set; }
 
         public Villa Villa { get; set; }
@@ -18,6 +19,6 @@ namespace MagicVilla_VillaAPI.Models
 
         public DateTime CreatedDate { get; set; }
 
-        public DateTime UpdateDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }

@@ -44,7 +44,7 @@ namespace MagicVilla_VillaAPI.Controllers
             {
                 _response.IsSucces = false;
                 _response.ErrorMessages
-                    = new List<string> { ex.ToString() };
+                    = new List<string>() { ex.ToString() };
             }
             return _response;
 
@@ -63,13 +63,13 @@ namespace MagicVilla_VillaAPI.Controllers
             {
                 if (id == 0)
                 {
-                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    //_response.StatusCode = HttpStatusCode.BadRequest;
                     return BadRequest(_response);
                 }
-                var villa = (await _dbVilla.GetAsync(u => u.Id == id));
+                var villa = await _dbVilla.GetAsync(u => u.Id == id);
                 if (villa == null)
                 {
-                    _response.StatusCode = HttpStatusCode.NotFound;
+                    //_response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
                 }
                 _response.Result = _mapper.Map<VillaDTO>(villa);
@@ -80,7 +80,7 @@ namespace MagicVilla_VillaAPI.Controllers
             {
                 _response.IsSucces = false;
                 _response.ErrorMessages
-                    = new List<string> { ex.ToString() };
+                    = new List<string>() { ex.ToString() };
             }
             return _response;
 
@@ -136,7 +136,7 @@ namespace MagicVilla_VillaAPI.Controllers
             {
                 _response.IsSucces = false;
                 _response.ErrorMessages
-                    = new List<string> { ex.ToString() };
+                    = new List<string>() { ex.ToString() };
             }
             return _response;
         }
@@ -170,7 +170,7 @@ namespace MagicVilla_VillaAPI.Controllers
             {
                 _response.IsSucces = false;
                 _response.ErrorMessages
-                    = new List<string> { ex.ToString() };
+                    = new List<string>() { ex.ToString() };
             }
             return _response;
 
@@ -213,7 +213,7 @@ namespace MagicVilla_VillaAPI.Controllers
             {
                 _response.IsSucces = false;
                 _response.ErrorMessages
-                    = new List<string> { ex.ToString() };
+                    = new List<string>() { ex.ToString() };
             }
             return _response;
 
