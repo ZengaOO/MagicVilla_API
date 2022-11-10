@@ -7,7 +7,8 @@
             GET,
             POST,
             POT,
-            DELETE
+            DELETE,
+            PUT
         }
        
 
