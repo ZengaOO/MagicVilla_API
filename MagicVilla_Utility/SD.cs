@@ -1,4 +1,4 @@
-﻿namespace MagicVilla_Utility_
+﻿namespace MagicVilla_Utility
 {
     public static class SD
     {
@@ -6,11 +6,10 @@
         {
             GET,
             POST,
-            POT,
-            DELETE,
-            PUT
+            PUT,
+            DELETE
+            
         }
        
-
     }
 }

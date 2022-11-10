@@ -1,4 +1,4 @@
-﻿using MagicVilla_Utility_;
+﻿using MagicVilla_Utility;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Services.IServices;
 using Newtonsoft.Json;
@@ -28,7 +28,7 @@ namespace MagicVilla_Web.Services
                 message.RequestUri = new Uri(apiRequest.Url);
                 if (apiRequest.Data != null)
                 {
-                    message.Content - new StringContent(JsonConvert.SerializeObject(apiRequest.Data),
+                    message.Content = new StringContent(JsonConvert.SerializeObject(apiRequest.Data),
                        Encoding.UTF8, "application/json");
                 }
                 switch (apiRequest.ApiType)
@@ -54,7 +54,7 @@ namespace MagicVilla_Web.Services
                 var APIResponse = JsonConvert.DeserializeObject<T>(apiContent);
                 return APIResponse;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 var dto = new APIResponse
                 {
@@ -62,7 +62,7 @@ namespace MagicVilla_Web.Services
                     IsSuccess = false
                 };
                 var res = JsonConvert.SerializeObject(dto);
-                var APIResponse = JsonContent.DeserializeObject<T>(res);
+                var APIResponse = JsonConvert.DeserializeObject<T>(res);
                 return APIResponse;
             } 
         }
