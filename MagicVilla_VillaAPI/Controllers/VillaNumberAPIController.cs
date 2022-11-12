@@ -44,7 +44,7 @@ namespace MagicVilla_VillaAPI.Controllers
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -78,7 +78,7 @@ namespace MagicVilla_VillaAPI.Controllers
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -121,7 +121,7 @@ namespace MagicVilla_VillaAPI.Controllers
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -150,12 +150,12 @@ namespace MagicVilla_VillaAPI.Controllers
 
                 await _dbVillaNumber.RemoveAsync(villaNumber);
                 _response.StatusCode = HttpStatusCode.NoContent;
-                _response.IsSucces = true;
+                _response.IsSuccess = true;
                 return Ok(_response);
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -186,12 +186,12 @@ namespace MagicVilla_VillaAPI.Controllers
                 
                 await _dbVillaNumber.UpdateAsync(model);
                 _response.StatusCode = HttpStatusCode.NoContent;
-                _response.IsSucces = true;
+                _response.IsSuccess = true;
                 return Ok(_response);
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }

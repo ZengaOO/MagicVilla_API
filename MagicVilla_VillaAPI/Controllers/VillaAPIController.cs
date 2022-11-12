@@ -26,7 +26,7 @@ namespace MagicVilla_VillaAPI.Controllers
         {
             _dbVilla = dbVilla;
             _mapper = mapper;
-            this._response = new();
+            _response = new();
         }
 
         [HttpGet]
@@ -42,7 +42,7 @@ namespace MagicVilla_VillaAPI.Controllers
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -78,7 +78,7 @@ namespace MagicVilla_VillaAPI.Controllers
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -101,7 +101,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
                 if (await _dbVilla.GetAsync(u => u.Name.ToLower() == createDTO.Name.ToLower()) != null)
                 {
-                    ModelState.AddModelError("CustomError", "Villa already Exists!");
+                    ModelState.AddModelError("ErrorMessages", "Villa already Exists!");
                     return BadRequest(ModelState);
                 }
 
@@ -134,7 +134,7 @@ namespace MagicVilla_VillaAPI.Controllers
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -163,12 +163,12 @@ namespace MagicVilla_VillaAPI.Controllers
 
                 await _dbVilla.RemoveAsync(villa);
                 _response.StatusCode = HttpStatusCode.NoContent;
-                _response.IsSucces = true;
+                _response.IsSuccess = true;
                 return Ok(_response);
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
@@ -206,12 +206,12 @@ namespace MagicVilla_VillaAPI.Controllers
                 //};
                 await _dbVilla.UpdateAsync(model);
                 _response.StatusCode = HttpStatusCode.NoContent;
-                _response.IsSucces = true;
+                _response.IsSuccess = true;
                 return Ok(_response);
             }
             catch (Exception ex)
             {
-                _response.IsSucces = false;
+                _response.IsSuccess = false;
                 _response.ErrorMessages
                     = new List<string>() { ex.ToString() };
             }
