@@ -16,12 +16,12 @@ namespace MagicVilla_VillaAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Villa>().HasData(
-                new Villa()
+                new Villa
                 {
                     Id = 1,
                     Name = "Royal Villa",
                     Details = "Filse 11 maximus leo",
-                    ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa3.jpg",
+                    ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa3.jpg",
                     Occupancy = 5,
                     Rate = 200,
                     Sqft = 550,
@@ -29,48 +29,48 @@ namespace MagicVilla_VillaAPI.Data
                     CreatedDate = DateTime.Now
 
                 },
-                new Villa()
+                new Villa
                 {
                     Id = 2,
                     Name = "Premium Pool Villa",
                     Details = "Filse 11 maximus leo",
-                    ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa1.jpg",
+                    ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa1.jpg",
                     Occupancy = 4,
                     Rate = 300,
                     Sqft = 550,
                     Amenity = "",
                     CreatedDate = DateTime.Now
                 },
-                new Villa()
+                new Villa
                 {
                     Id = 3,
                     Name = "Luxury Pool Villa",
                     Details = "Filse 11 maximus leo",
-                    ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa4.jpg",
+                    ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa4.jpg",
                     Occupancy = 4,
                     Rate = 400,
                     Sqft = 750,
                     Amenity = "",
                     CreatedDate = DateTime.Now
                 },
-                new Villa()
+                new Villa
                 {
                     Id = 4,
                     Name = "Diamond Villa",
                     Details = "Filse 11 maximus leo",
-                    ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa5.jpg",
+                    ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa5.jpg",
                     Occupancy = 4,
                     Rate = 550,
                     Sqft = 900,
                     Amenity = "",
                     CreatedDate = DateTime.Now
                 },
-                new Villa()
+                new Villa
                 {
                     Id = 5,
                     Name = "Diamond Pool Villa",
                     Details = "Filse 11 maximus leo",
-                    ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa2.jpg",
+                    ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa2.jpg",
                     Occupancy = 4,
                     Rate = 600,
                     Sqft = 1100,
