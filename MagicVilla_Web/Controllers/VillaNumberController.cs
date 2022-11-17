@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MagicVilla_VillaAPI.Models;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
 using MagicVilla_Web.Models.VM;
@@ -63,10 +62,10 @@ namespace MagicVilla_Web.Controllers
                 if (ModelState.IsValid)
                 {
 
-                    var response = await _villaService.CreateAsync<APIResponse>(model);
+                    var response = await _villaNumberService.CreateAsync<APIResponse>(model);
                     if (response != null && response.IsSuccess)
                     {
-                        return RedirectToAction(nameof(IndexVilla));
+                        return RedirectToAction(nameof(IndexVillaNumber));
                     }
                 }
             return View(model);

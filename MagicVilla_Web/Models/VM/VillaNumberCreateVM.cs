@@ -1,5 +1,4 @@
-﻿using MagicVilla_VillaAPI.Models;
-using MagicVilla_Web.Models.Dto;
+﻿using MagicVilla_Web.Models.Dto;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
