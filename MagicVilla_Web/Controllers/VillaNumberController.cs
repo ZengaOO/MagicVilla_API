@@ -62,7 +62,7 @@ namespace MagicVilla_Web.Controllers
                 if (ModelState.IsValid)
                 {
 
-                    var response = await _villaNumberService.CreateAsync<APIResponse>(model);
+                    var response = await _villaNumberService.CreateAsync<APIResponse>(model.VillaNumber);
                     if (response != null && response.IsSuccess) //&& response.ErrorMessages.Count==0)
                     {
                         return RedirectToAction(nameof(IndexVillaNumber));
@@ -72,7 +72,7 @@ namespace MagicVilla_Web.Controllers
             var resp = await _villaService.GetAllAsync<APIResponse>();
             if (resp != null && resp.IsSuccess)
             {
-                VillaNumberVM = JsonConvert.DeserializeObject<List<VillaDTO>>
+               model.VillaList = JsonConvert.DeserializeObject<List<VillaDTO>>
                     (Convert.ToString(resp.Result)).Select(i => new SelectListItem
                     {
                         Text = i.Name,
