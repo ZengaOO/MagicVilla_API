@@ -1,6 +1,7 @@
 ﻿using MagicVilla_Utility;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
+using MagicVilla_Web.Models.VM;
 using MagicVilla_Web.Services.IServices;
 
 namespace MagicVilla_Web.Services
@@ -26,6 +27,11 @@ namespace MagicVilla_Web.Services
                 Url = villaUrl + "/api/v1/villaNumberAPI"
                 
             });
+        }
+
+        public Task CreateAsync<T>(VillaNumberCreateVM model)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<T> DeleteAsync<T>(int id)
