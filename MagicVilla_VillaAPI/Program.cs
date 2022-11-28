@@ -147,6 +147,15 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+//*   Azure
+//    app.UseSwagger();
+//    app.UseSwaggerUI(options => {
+//        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Magic_VillaV1");
+//        options.SwaggerEndpoint("/swagger/v2/swagger.json", "Magic_VillaV2");
+// *       options.RoutePrefix=String.Empty;
+//    });
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
