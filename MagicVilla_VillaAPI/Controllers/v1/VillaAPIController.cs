@@ -32,7 +32,7 @@ namespace MagicVilla_VillaAPI.Controllers.v1
         }
 
         [HttpGet]
-
+        [ResponseCache(Duration = 30)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -64,6 +64,8 @@ namespace MagicVilla_VillaAPI.Controllers.v1
         //[ProducesResponseType(200)] //if you remove ActionResult [ProducesResponseType(200, Type =typeof(VillaDTO))]
         //[ProducesResponseType(404)]
         //[ProducesResponseType(400)] 
+        //[ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
+
         public async Task<ActionResult<APIResponse>> GetVilla(int id)
         {
             try
